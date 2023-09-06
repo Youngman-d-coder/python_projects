@@ -1,0 +1,7 @@
+file = open("Names.txt", "w")
+file.write("Ezechi \n")
+file.write("Chimdi \n")
+file.write("Nnedimma \n")
+file.write("Chilaka \n")
+file.write("Ogechi \n")
+file.close()
