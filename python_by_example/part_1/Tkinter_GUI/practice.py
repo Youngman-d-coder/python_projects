@@ -1,21 +1,31 @@
 from tkinter import *
-import random
 
 def click():
-    num = random.randint(1, 6)
-    answer["text"] = num
+    num = textbox1.get()
+    num = int(num)
+    total += num
+    textbox2["text"] = total
 
 w = Tk()
-w.title("DIE ROLLER")
-w.geometry("200x200")
+w.geometry("500x500")
+w.title("adder")
 
-button1 = Button(text = "Roll", command = click)
-button1.place(x = 30, y = 30, width = 50, height = 25)
+total = 0
 
-answer = Message(text = "")
-answer.place(x = 40, y = 70, width = 80, height = 80)
-answer["bg"] = "white"
-answer["fg"] = "black"
-answer
+label1 = Label(text = "Enter a number:  ")
+label1.place(x = 38, y = 20)
+
+textbox1 = Entry(text = "")
+textbox1.place(x = 150, y = 20, width = 200, height = 25)
+textbox1["justify"] = "center"
+textbox1.focus()
+
+button1 = Button(text = "Press me", command = click)
+button1.place(x = 30, y = 50, width = 120, height = 25)
+
+textbox2 = Message(text = "")
+textbox2.place(x = 150, y = 50, width = 200, height = 25)
+textbox2["bg"] = "white"
+textbox2["fg"] = "black"
 
 w.mainloop()
